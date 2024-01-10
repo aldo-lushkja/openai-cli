@@ -1,0 +1,31 @@
+name: Quarkus Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_MODEL: ${{ secrets.OPENAI_API_MODEL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Test with Gradle
+        run: ./gradlew test -Popenai.api.key=$OPENAI_API_KEY  -Popenai.api.model=$OPENAI_API_MODEL
+
+      - name: Build Quarkus application
+        if: success()
+        run: ./gradlew build -Popenai.api.key=$OPENAI_API_KEY  -Popenai.api.model=$OPENAI_API_MODEL
