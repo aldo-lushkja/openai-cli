@@ -22,6 +22,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '21'
+      - name: Set execute permissions for gradlew
+        run: chmod +x gradlew
 
       - name: Test with Gradle
         run: ./gradlew test -Popenai.api.key=$OPENAI_API_KEY  -Popenai.api.model=$OPENAI_API_MODEL
