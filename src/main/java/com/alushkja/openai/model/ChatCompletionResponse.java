@@ -1,6 +1,5 @@
-package com.alushkja.openai.model.chatgpt.chat;
+package com.alushkja.openai.model;
 
-//convert to java record
 public class ChatCompletionResponse {
     private String id;
     private String object;

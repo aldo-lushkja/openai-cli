@@ -1,4 +1,4 @@
-package com.alushkja.openai.model.chatgpt.chat;
+package com.alushkja.openai.model;
 
 public class ChatCompletionChoice {
 
@@ -30,15 +30,3 @@ public class ChatCompletionChoice {
         this.finishReason = finishReason;
     }
 }
-
-/**
- * {
- *  *     "index": 0,
- *  *     "message": {
- *  *       "role": "assistant",
- *  *       "content": "\n\nHello there, how may I assist you today?",
- *  *     },
- *  *     "logprobs": null,
- *  *     "finish_reason": "stop"
- *  *   }
- */

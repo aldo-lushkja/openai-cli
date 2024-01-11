@@ -1,4 +1,4 @@
-package com.alushkja.openai.model.chatgpt.chat;
+package com.alushkja.openai.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
